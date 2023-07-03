@@ -78,23 +78,23 @@
 //   }
 
 // }
-  
+
 
 // FUNCIÓN DE LIMPIAR FORMULARIOS
 // function cancelar() {
-  // Cerrar el formulario aquí
-  // document.getElementById('formulario').reset();
-  // window.location.href = 'servicios.html';
+// Cerrar el formulario aquí
+// document.getElementById('formulario').reset();
+// window.location.href = 'servicios.html';
 
 
 // }
-  
+
 
 document.getElementById("editForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Evita que se envíe el formulario automáticamente
 
 
-  
+
   // Obtiene los valores de los campos
   var nombre_servicio = document.getElementById('nombre_servicio').value;
   var descripcion = document.getElementById('descripcion').value;
@@ -104,38 +104,34 @@ document.getElementById("editForm").addEventListener("submit", function (event) 
 
   // Realiza las validaciones
   if (nombre_servicio == "" || descripcion == "") {
-    
+
     Swal.fire({
       icon: "error",
       title: "Oops!",
       text: "Llenar los campos vacios",
-  });
-    
+    });
+
 
   } else if (!validarAmbos.test(nombre_servicio)) {
-      Swal.fire({
-          icon: "error",
-          title: "Oops!",
-          text: "Ingresar un servicio válido",
-      });
+    Swal.fire({
+      icon: "error",
+      title: "Oops!",
+      text: "Ingresar un servicio válido",
+    });
   }
   else if (!validarAmbos.test(descripcion)) {
-      Swal.fire({
-          icon: "error",
-          title: "Oops!",
-          text: "Ingresar una descripción válida",
-      });
+    Swal.fire({
+      icon: "error",
+      title: "Oops!",
+      text: "Ingresar una descripción válida",
+    });
   }
 
   else {
-      this.submit()
+    this.submit()
   }
 
 });
-
-
-
-
 
 
 

@@ -53,10 +53,10 @@ include('db.php');
         </div>
 
         <div class="col-auto">
-            <a href="servicios.php"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button></a>
+            <a href="servicios.php"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button></a>
         </div>
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3" name="guardar" value="guardardocente">Registrar</button>
+            <button type="submit" class="btn btn-primary mb-3" name="guardar" value="guardardocente">Guardar</button>
         </div>
     </form>
     <script src="validarEditarServicios.js"></script>

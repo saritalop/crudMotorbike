@@ -172,11 +172,3 @@ function validar2() {
   
 
 // FUNCIÓN DE LIMPIAR FORMULARIOS
-function cancelar() {
-  // Cerrar el formulario aquí
-  document.getElementById('formulario').reset();
-  window.location.href = 'repuestos.html';
-
-
-}
-

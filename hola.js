@@ -31,5 +31,18 @@ document.getElementById("formula").addEventListener("submit", function (event) {
     this.submit()
   }
 
+
+
+
 });
+
+function cancelar() {
+  // Cerrar el formulario aquí
+  document.getElementById('formula').reset();
+  window.location.href = 'servicios.php';
+
+
+}
+
+
 
