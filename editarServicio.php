@@ -59,7 +59,8 @@ include('db.php');
             <button type="submit" class="btn btn-primary mb-3" name="guardar" value="guardardocente">Registrar</button>
         </div>
     </form>
-    <script src="validarUpdateServicios.js"></script>
+    <script src="validarEditarServicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
