@@ -25,14 +25,14 @@
 <body>
     <!-- BOTON DE GENERAR REPORTES -->
 
-    <div class="text-right" >
-        <a href="fpdf/reporteServicios.php" id="reporte"  target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i></a>
+    <div class="text-right">
+        <a href="fpdf/reporteServicios.php" id="reporte" target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i></a>
 
 
     </div>
 
 
-<!-- BARRA Y BOTÓN DE BUSQUEDA -->
+    <!-- BARRA Y BOTÓN DE BUSQUEDA -->
 
     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="barraBusqueda">
     <button class="btn btn-outline-dark " id="botonBuscar" type="submit">Buscar</button>
@@ -94,17 +94,19 @@
                         width: calc(100% / 3=20px);
 
                     }
-                    
-                    #barraBusqueda{
+
+                    #barraBusqueda {
                         position: absolute;
-                        width: 150px; 
-                        top: 185px; left: 710px;
+                        width: 150px;
+                        top: 185px;
+                        left: 710px;
                     }
-                    
-                    #botonBuscar{
+
+                    #botonBuscar {
                         position: absolute;
-                     
-                        top: 185px; left: 850px;
+
+                        top: 185px;
+                        left: 850px;
                     }
 
 
@@ -183,10 +185,12 @@
                         color: green;
                         cursor: pointer;
                     }
-                    #reporte{
+
+                    #reporte {
                         position: absolute;
                         width: 50px;
-                        top: 185px; left: 950px;
+                        top: 185px;
+                        left: 950px;
                     }
                 </style>
 

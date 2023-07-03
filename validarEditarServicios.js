@@ -128,10 +128,19 @@ document.getElementById("editForm").addEventListener("submit", function (event) 
   }
 
   else {
-    this.submit()
+    Swal.fire({
+      icon: "success",
+      title: "Excelente",
+      text: "¡Servicio editado!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.submit();
+      }
+    })
   }
+}
 
-});
+);
 
 
 
