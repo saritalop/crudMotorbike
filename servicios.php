@@ -19,13 +19,14 @@
     <script src="https://kit.fontawesome.com/51aee0fcba.js" crossorigin="anonymous"></script>
 
 
+
 </head>
 
 <body>
     <!-- BOTON DE GENERAR REPORTES -->
 
     <div class="text-right" >
-        <a href="fpdf/reporteServicios.php" target="_blank" class="btn btn-success">Generar Reporte</a>
+        <a href="fpdf/reporteServicios.php" id="reporte"  target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i></a>
 
 
     </div>
@@ -181,6 +182,11 @@
                     #IconoEstado {
                         color: green;
                         cursor: pointer;
+                    }
+                    #reporte{
+                        position: absolute;
+                        width: 50px;
+                        top: 185px; left: 950px;
                     }
                 </style>
 
