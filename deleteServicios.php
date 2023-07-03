@@ -3,6 +3,7 @@ include("db.php");
 
 if (isset($_GET['id_servicio'])) {
     $id_servicio = $_GET['id_servicio'];
+    
     $query = "DELETE  FROM servicios WHERE id_servicio = $id_servicio";
     $result = mysqli_query($conn, $query);
     if (!$result) {
