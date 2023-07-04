@@ -19,7 +19,7 @@
 
     <script src="https://kit.fontawesome.com/51aee0fcba.js" crossorigin="anonymous"></script>
 
-    <script src="clientes.js"></script>
+   
 
 </head>
 
@@ -167,29 +167,33 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <form id="formulario" action="guardarCliente.php" method="post">
+                                    <form id="formulario" action="guardarCliente.php" method="POST">
                                         <div class="nombreUsua">
+                                        <div class="input-box">
+                                                    <span class="details">Id</span><br>
+                                                    <input type="text" id="id" name="id" placeholder="Ingrese id del cliente"> 
+                                                </div>
                                             <div class="input-box">
                                                 <span class="details">Nombre</span><br>
-                                                <input type="text" id="nombre" placeholder="Ingrese su nombre completo"
+                                                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo"
                                                     >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Cedula</span><br>
-                                                <input id="cedula" type="text" placeholder="Ingrese su cedula" >
+                                                <input id="cedula" name="cedula"  type="text" placeholder="Ingrese su cedula" >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Dirección</span><br>
-                                                <input id="direccion" type="text" placeholder="Ingrese su direccion"
+                                                <input id="direccion"  name="direccion"  type="text" placeholder="Ingrese su direccion"
                                                     >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Email</span><br>
-                                                <input id="email" type="text" placeholder="Ingrese su email" >
+                                                <input id="email"  name="email"  type="text" placeholder="Ingrese su email" >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Telefono</span><br>
-                                                <input id="telefono" type="text"
+                                                <input id="telefono" name="telefono" type="text"
                                                     placeholder="Ingresa tu numero de telefono" >
                                             </div>
                                             <br>
@@ -357,6 +361,7 @@
 
         </section>
     </div>
+    <script src="clientes.js"></script>
     <script src="estadoColor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
