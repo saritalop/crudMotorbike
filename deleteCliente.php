@@ -1,8 +1,8 @@
 <?php
 include("db.php");
 
-if (isset($_GET['id'])) {
-    $id_cliente = $_GET['id'];
+if (isset($_GET['id_cliente'])) {
+    $id_cliente = $_GET['id_cliente'];
     
     $query = "DELETE  FROM clientes WHERE id_cliente = $id_cliente";
     $result = mysqli_query($conn, $query);

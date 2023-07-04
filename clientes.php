@@ -239,7 +239,7 @@
                             <td><?php echo $row['direccion_cliente'] ?></td>
                             <td><?php echo $row['telefono_cliente'] ?></td>
                             <!-- BOTON DE EDITAR -->
-                            <td><a href="editarCliente.php?id_cliente=<?php echo $row['id_cliente'] ?>">EDITAR</a></td>
+                            <td><a href="editarCliente.php?id_cliente=<?php echo $row['id_cliente'] ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
                             <td><a href="deleteCliente.php?id_cliente=<?php echo $row['id_cliente'] ?>"><i class="fa-solid fa-power-off" id="IconoEstado"></i></a></td>
 
                             <?php
