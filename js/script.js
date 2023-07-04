@@ -57,7 +57,7 @@ function navigateTo(page) {
       frame.src = 'roles.html';
       break;
     case 'Clientes':
-      frame.src = 'clientes.html';
+      frame.src = 'clientes.php';
       break;
     case 'Repuestos':
       frame.src = 'repuestos.html';

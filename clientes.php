@@ -1,3 +1,4 @@
+<?php include('db.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +25,10 @@
 
 <body>
 
+    <!-- BARRA Y BOTÓN DE BUSQUEDA -->
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="barraBusqueda">
+        <button class="btn btn-outline-dark " id="botonBuscar" type="submit">Buscar</button>
+
     <div id="content">
 
         <section>
@@ -45,6 +50,20 @@
                         padding: 25px 30px;
                         border-radius: 5px;
 
+                    }
+            
+                    #barraBusqueda {
+                        position: absolute;
+                        width: 150px;
+                        top: 185px;
+                        left: 710px;
+                    }
+
+                    #botonBuscar {
+                        position: absolute;
+
+                        top: 185px;
+                        left: 850px;
                     }
 
                     .container .title {
@@ -148,43 +167,41 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <form id="formulario" action="#">
+                                    <form id="formulario" action="guardarCliente.php" method="post">
                                         <div class="nombreUsua">
                                             <div class="input-box">
                                                 <span class="details">Nombre</span><br>
                                                 <input type="text" id="nombre" placeholder="Ingrese su nombre completo"
-                                                    required>
+                                                    >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Cedula</span><br>
-                                                <input id="cedula" type="text" placeholder="Ingrese su cedula" required>
+                                                <input id="cedula" type="text" placeholder="Ingrese su cedula" >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Dirección</span><br>
                                                 <input id="direccion" type="text" placeholder="Ingrese su direccion"
-                                                    required>
+                                                    >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Email</span><br>
-                                                <input id="email" type="text" placeholder="Ingrese su email" required>
+                                                <input id="email" type="text" placeholder="Ingrese su email" >
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Telefono</span><br>
                                                 <input id="telefono" type="text"
-                                                    placeholder="Ingresa tu numero de telefono" required>
+                                                    placeholder="Ingresa tu numero de telefono" >
                                             </div>
-
+                                            <br>
+                                            <div class="button-container">
+                                            <button type="submit" class="btn btn-outline-success" name="actualizar">Agregar</button>
+                                            <button type="submit" class="btn btn-outline-danger">Cancelar</button>
+                                            </div>
 
                                         </div>
                                         <br>
                                     </form>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <input type="submit" value="Agregar" class="btn btn-outline-success"
-                                    onclick="Agregar() " />
-                                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
-                                    onclick="cancelar()">Cancelar</button>
                             </div>
                         </div>
                     </div>
@@ -206,14 +223,25 @@
                         </tr>
                     </thead>
                     <tbody id="user-list">
+                    <?php
+                    $query = "SELECT * FROM clientes";
+                    $result_1 = mysqli_query($conn, $query);
+                    while ($row = mysqli_fetch_array($result_1)) { ?>
                         <tr>
-                            <td>01</td>
-                            <td>sara Arias</td>
-                            <td>1000234576</td>
-                            <td>Saritalop@gmail.com</td>
-                            <td>Cr34 #43-54</td>
-                            <td>3148732945</td>
-                            <td><a href="#" class="Editar" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                            <td><?php echo $row['id_cliente'] ?></td>
+                            <td><?php echo $row['nombre_cliente'] ?></td>
+                            <td><?php echo $row['cedula_cliente'] ?></td>
+                            <td><?php echo $row['email'] ?></td>
+                            <td><?php echo $row['direccion_cliente'] ?></td>
+                            <td><?php echo $row['telefono_cliente'] ?></td>
+                            <!-- BOTON DE EDITAR -->
+                            <td><a href="editarCliente.php?id_cliente=<?php echo $row['id_cliente'] ?>">EDITAR</a></td>
+                            <td><a href="deleteCliente.php?id_cliente=<?php echo $row['id_cliente'] ?>"><i class="fa-solid fa-power-off" id="IconoEstado"></i></a></td>
+
+                            <?php
+                    }
+                        ?>
+                            <!-- <td><a href="#" class="Editar" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
                                 <style>
                                     .Editar {
@@ -281,7 +309,7 @@
 
 
                             <!-- ICONO DE ESTADO -->
-                            <td><i class="fa-solid fa-power-off" id="IconoEstado"></i></td>
+                            <!-- <td><i class="fa-solid fa-power-off" id="IconoEstado"></i></td> --> 
 
 
 
@@ -302,12 +330,12 @@
                 </table>
 
             </div>
-            <div class="search">
+            <!-- <div class="search" width="40%" style="margin-top: -396px; margin-left: 690px;">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-dark" type="submit">Buscar</button>
                 </form>
-            </div>
+            </div> -->
 
             <nav class="pagination" aria-label="Page navigation example">
                 <ul class="pagination">

@@ -6,6 +6,76 @@ function swalAlert(icon,title,text){
   })
 }
 
+document.getElementById("formulario").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita que se envíe el formulario automáticamente
+
+  // Obtiene los valores de los campos
+  var nombre_cliente = document.getElementById('nombre').value;
+  var cedula_cliente = document.getElementById('cedula').value;
+  var email= document.getElementById('email').value;
+  var direccion_cliente = document.getElementById('direccion').value;
+  var telefono_cliente = document.getElementById('telefono').value;
+  var descripcion = document.getElementById('descripcion').value;
+  var regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ][A-Za-zÁáÉéÍíÓóÚúÑñ\s]*$/; // Expresión regular para validar solo letras y espacios y valida que el primer campo no sea un espacio
+  var regex_num = /^[0-9]+$/;// Expresión regular para validar que la cédula solo contenga números
+  var regex_direc = /^[a-zA-Z]+(\s*)?[0-9a-zA-Z\s]*#[a-zA-Z0-9]+-[a-zA-Z0-9]+$/;
+  var regex_tele = /^\d+$/;// Expresión regular para validar que el teléfono solo contenga números
+  var email_val =/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  if(nombre_cliente=='' || cedula_cliente=='' || direccion_cliente=='' ||email=='' || telefono==''){
+      
+      swalAlert('error','Oops...','Ingrese informacion en los campos vacios')
+
+  }if (!regex.test(nombre_cliente)) {
+        // Si el nombre está vacío o no cumple con el patrón de letras, mostrar un mensaje de error
+        swalAlert('error','Oops...','Por favor, ingresa un nombre válido.')
+
+  }if (!regex_num.test(cedula_cliente)) {
+        // Comprueba si la cédula cumple con el formato numérico
+        swalAlert('error','Oops...','ingresar solo numeros en el campo de la cedula')
+        
+
+  }if ( document.getElementById("cedula").value.length < 7 ){//para validar la longitud de la cedula
+    swalAlert('error','Oops...','Cedula Incorrecta. Minimo 7 caracteres')
+
+  }if ( document.getElementById("cedula").value.length > 10){
+    swalAlert('error','Oops...','Cedula Incorrecta. Maximo 10 caracteres')
+    
+  }if (!regex_direc.test(direccion_cliente)) {
+      // Comprueba si la dirección cumple con el formato especificado
+        swalAlert('error','Oops...','ingresar solo numeros, letras, un solo numeral y un solo guion. Ejem: Calle 123-A')
+
+  }if(!email_val.test(email)){ //validar por si no es correo
+    
+        swalAlert('error','Oops...','Ingrese el formato de email correcto')
+
+  }if (!regex_tele.test(telefono_cliente)) {
+    
+        swalAlert('error','Oops...','ingresar solo numero en el campo telefono')
+
+  }if ( document.getElementById("telefono").value.length < 7 ){//para validar la longitud de la telefono
+    swalAlert('error','Oops...','Telefono Incorrecto. Minimo 7 caracteres')
+
+  }if ( document.getElementById("telefono").value.length > 10){
+    swalAlert('error','Oops...','Telefono Incorrecto. Maximo 10 caracteres')
+
+  }
+  else {
+    swalAlert('success','Cliente agregado!','Se agregó correctamente!')
+    this.submit()
+  }
+
+
+
+
+});
+
+
+
+
+
+
+
 // funcion que nos ayudara a validar los datos
 async function Agregar(){ 
     let nombre = document.getElementById('nombre').value;
